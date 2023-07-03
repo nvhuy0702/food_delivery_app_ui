@@ -10,14 +10,32 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  google_fonts: ^5.1.0
+  cupertino_icons: ^1.0.5
+  google_fonts:
+  build_runner: ">=2.3.3"
+  introduction_screen:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.2
 flutter:
   uses-material-design: true
   assets:
-     - assets/images/
+    - assets/images/
+    - assets/icons/
+flutter_gen:
+  integrations:
+    lottie: true
+  fonts:
+    enabled: false
+  colors:
+    enabled: false
+  assets:
+    enabled: true
+    outputs:
+      class_name: AppAssets
+      package_parameter_enabled: true
+    exclude:
+      - assets/**/2x/**
+      - assets/**/3x/**
