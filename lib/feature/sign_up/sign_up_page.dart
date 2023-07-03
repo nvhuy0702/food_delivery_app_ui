@@ -1,51 +1,76 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/core/util/edg_insets.dart';
+import 'package:food_delivery_app_ui/core/util/size.dart';
 import 'package:food_delivery_app_ui/core/util/space.dart';
-import 'package:food_delivery_app_ui/feature/home/pages/home_page.dart';
-import 'package:food_delivery_app_ui/feature/sign_up/sign_up_page.dart';
 import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  static const signUpPage = "SignUpPage";
+
+  const SignUpPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _mailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = false;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildLogo(),
             AppSpacing.xXL,
             _buildTextLogin,
             AppSpacing.xXXL,
             _buildTextFormField(
+              txtController: _passwordController,
+              labelText: "Tên người dùng",
+              prefixIcon: Image.asset(AppAssets.icons.icUser.path),
+            ),
+            AppSpacing.S,
+            _buildTextFormField(
               txtController: _mailController,
               labelText: "Email",
+              prefixIcon: Image.asset(AppAssets.icons.icMail.path),
             ),
             AppSpacing.S,
             _buildTextFormField(
               txtController: _passwordController,
               labelText: "Mật khẩu",
               isShowSuffixIcon: true,
+              prefixIcon: Image.asset(AppAssets.icons.icPassword.path),
             ),
-            AppSpacing.L,
-            _buildTextLoginOther,
-            AppSpacing.L,
-            _buildOptionLogin(),
-            AppSpacing.L,
-            _forgotPassword,
-            _btnLogin(),
-            _noAccount
+            CheckboxListTile(
+              checkColor: Colors.white,
+              activeColor: const Color(0xFF53E88B),
+              title: const Text("Giữ đăng nhập"),
+              value: isChecked,
+              controlAffinity: ListTileControlAffinity.leading,
+              visualDensity: const VisualDensity(
+                horizontal: VisualDensity.minimumDensity,
+                vertical: VisualDensity.maximumDensity,
+              ),
+              contentPadding: const EdgeInsets.only(left: AppSize.xXS),
+              checkboxShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+            ),
+            _btnCreateAccount(),
+            _haveAccount
           ],
         ),
       ),
@@ -83,19 +108,22 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
-  Text get _buildTextLogin => const Text(
-        "Đăng nhập",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
+  Widget get _buildTextLogin => const Center(
+        child: Text(
+          "Đăng ký",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       );
 
   Widget _buildTextFormField({
     TextEditingController? txtController,
     String? labelText,
     bool isShowSuffixIcon = false,
+    Widget? prefixIcon,
   }) {
     return Padding(
       padding: AppEdgeInsets.horizontal(),
@@ -110,6 +138,7 @@ class _SignInPageState extends State<SignInPage> {
               width: 1.0,
             ),
           ),
+          prefixIcon: prefixIcon,
           suffixIcon: isShowSuffixIcon
               ? IconButton(
                   onPressed: () => setState(() => _obscureText = !_obscureText),
@@ -124,79 +153,11 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
-  Text get _buildTextLoginOther => const Text(
-        "Hoặc đăng nhập với",
-        textAlign: TextAlign.center,
-      );
-
-  Row _buildOptionLogin() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _loginWithAccountOther(
-          pathIcon: AppAssets.images.icFacebook.path,
-          content: "Facebook",
-        ),
-        _loginWithAccountOther(
-          pathIcon: AppAssets.images.icGoogle.path,
-          content: "Google",
-        ),
-      ],
-    );
-  }
-
-  InkWell _loginWithAccountOther({
-    String? pathIcon,
-    String? content,
-  }) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(15),
-      onTap: () {},
-      child: Container(
-        padding: AppEdgeInsets.symmetric(horizontal: 24),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: Colors.grey,
-          ),
-        ),
-        child: Row(
-          children: [
-            Image.asset(pathIcon ?? ""),
-            AppSpacing.M,
-            Text(content ?? "")
-          ],
-        ),
-      ),
-    );
-  }
-
-  TextButton get _forgotPassword => TextButton(
-        onPressed: () {},
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.zero,
-          minimumSize: const Size(50, 30),
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        ),
-        child: const Text(
-          "Quên mật khẩu",
-          style: TextStyle(
-            decoration: TextDecoration.underline,
-          ),
-        ),
-      );
-
-  Padding _btnLogin() {
+  Padding _btnCreateAccount() {
     return Padding(
       padding: AppEdgeInsets.symmetric(),
       child: ElevatedButton(
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => const HomePage(),
-          ),
-        ),
+        onPressed: () {},
         style: ElevatedButton.styleFrom(
           fixedSize: Size(MediaQuery.of(context).size.width * 1, 50),
           padding: AppEdgeInsets.allM,
@@ -206,27 +167,26 @@ class _SignInPageState extends State<SignInPage> {
           ),
         ),
         child: const Text(
-          "Đăng nhập",
+          "Tạo tài khoản",
         ),
       ),
     );
   }
 
-  TextButton get _noAccount => TextButton(
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => const SignUpPage(),
-          ),
-        ),
+  TextButton get _haveAccount => TextButton(
+        onPressed: () => Navigator.pop(context),
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
           minimumSize: const Size(50, 30),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        child: const Text(
-          "Bạn chưa có tài khoản? Đăng ký ngay",
-          style: TextStyle(color: Color(0xFF53E88B)),
+        child: const Center(
+          child: Text(
+            "Bạn đã có tài khoản? Đăng nhập ngay",
+            style: TextStyle(
+              color: Color(0xFF53E88B),
+            ),
+          ),
         ),
       );
 }

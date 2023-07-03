@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/core/util/space.dart';
 import 'package:food_delivery_app_ui/feature/sign_in/pages/sign_in_page.dart';
+import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -25,7 +26,7 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
             title: '',
             bodyWidget: Column(
               children: [
-                Image.asset("assets/images/on_boarding_1.png"),
+                Image.asset(AppAssets.images.onBoarding1.path),
                 _buildContent(
                   content: 'Tìm đồ ăn thoải mái của bạn ở đây',
                   fontSize: 26,
@@ -44,7 +45,7 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
             bodyWidget: Column(
               children: [
                 Image.asset(
-                  "assets/images/on_boarding_2.png",
+                  AppAssets.images.onBoarding2.path,
                   height: 426,
                 ),
                 _buildContent(
@@ -62,14 +63,14 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
             )),
       ],
       showSkipButton: true,
-      next: const Icon(Icons.arrow_forward),
+      next: Image.asset(AppAssets.icons.icArrowRight.path),
       done: const Text('Xong', style: TextStyle(fontWeight: FontWeight.w600)),
       skip: const Text('Bỏ qua', style: TextStyle(fontWeight: FontWeight.w600)),
       onSkip: () => _onIntroEnd(context),
       onDone: () => _onIntroEnd(context),
-
     );
   }
+
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const SignInPage()),
