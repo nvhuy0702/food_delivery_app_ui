@@ -16,6 +16,12 @@ class $AssetsIconsGen {
   AssetGenImage get icArrowRight =>
       const AssetGenImage('assets/icons/ic_arrow_right.png');
 
+  /// File path: assets/icons/ic_back.png
+  AssetGenImage get icBack => const AssetGenImage('assets/icons/ic_back.png');
+
+  /// File path: assets/icons/ic_cart.png
+  AssetGenImage get icCart => const AssetGenImage('assets/icons/ic_cart.png');
+
   /// File path: assets/icons/ic_filter.png
   AssetGenImage get icFilter =>
       const AssetGenImage('assets/icons/ic_filter.png');
@@ -23,8 +29,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_hide.png
   AssetGenImage get icHide => const AssetGenImage('assets/icons/ic_hide.png');
 
+  /// File path: assets/icons/ic_home.png
+  AssetGenImage get icHome => const AssetGenImage('assets/icons/ic_home.png');
+
   /// File path: assets/icons/ic_mail.png
   AssetGenImage get icMail => const AssetGenImage('assets/icons/ic_mail.png');
+
+  /// File path: assets/icons/ic_mess.png
+  AssetGenImage get icMess => const AssetGenImage('assets/icons/ic_mess.png');
 
   /// File path: assets/icons/ic_notification.png
   AssetGenImage get icNotification =>
@@ -33,6 +45,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_password.png
   AssetGenImage get icPassword =>
       const AssetGenImage('assets/icons/ic_password.png');
+
+  /// File path: assets/icons/ic_profile.png
+  AssetGenImage get icProfile =>
+      const AssetGenImage('assets/icons/ic_profile.png');
+
+  /// File path: assets/icons/ic_search.png
+  AssetGenImage get icSearch =>
+      const AssetGenImage('assets/icons/ic_search.png');
 
   /// File path: assets/icons/ic_show.png
   AssetGenImage get icShow => const AssetGenImage('assets/icons/ic_show.png');
@@ -43,11 +63,17 @@ class $AssetsIconsGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         icArrowRight,
+        icBack,
+        icCart,
         icFilter,
         icHide,
+        icHome,
         icMail,
+        icMess,
         icNotification,
         icPassword,
+        icProfile,
+        icSearch,
         icShow,
         icUser
       ];
@@ -75,6 +101,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/logo_restaurant_1.png
+  AssetGenImage get logoRestaurant1 =>
+      const AssetGenImage('assets/images/logo_restaurant_1.png');
+
+  /// File path: assets/images/logo_restaurant_2.png
+  AssetGenImage get logoRestaurant2 =>
+      const AssetGenImage('assets/images/logo_restaurant_2.png');
+
+  /// File path: assets/images/logo_restaurant_3.png
+  AssetGenImage get logoRestaurant3 =>
+      const AssetGenImage('assets/images/logo_restaurant_3.png');
+
+  /// File path: assets/images/logo_restaurant_4.png
+  AssetGenImage get logoRestaurant4 =>
+      const AssetGenImage('assets/images/logo_restaurant_4.png');
+
   /// File path: assets/images/on_boarding_1.png
   AssetGenImage get onBoarding1 =>
       const AssetGenImage('assets/images/on_boarding_1.png');
@@ -98,6 +140,10 @@ class $AssetsImagesGen {
         icGoogle,
         loginBackground,
         logo,
+        logoRestaurant1,
+        logoRestaurant2,
+        logoRestaurant3,
+        logoRestaurant4,
         onBoarding1,
         onBoarding2,
         promoAdvertising,

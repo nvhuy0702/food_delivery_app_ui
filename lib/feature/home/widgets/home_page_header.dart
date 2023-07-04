@@ -1,32 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/core/util/space.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/bottom_navigation_bar_custom.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/home_header.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/nearest_restaurant.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/popular_menu.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/promo_advertising.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/search_food.dart';
 import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 
-class HomePage extends StatefulWidget {
+import 'bottom_navigation_bar_custom.dart';
+import 'home_header.dart';
+import 'search_food.dart';
+
+class HomePageHeader extends StatefulWidget {
+  final Widget widget;
   final bool showBack;
   final bool hideFilter;
+  final Widget? bottomNavigationBar;
 
-  const HomePage({
+  const HomePageHeader({
     super.key,
+    required this.widget,
     this.showBack = false,
     this.hideFilter = false,
+    this.bottomNavigationBar,
   });
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageHeader> createState() => _HomePageHeaderState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageHeaderState extends State<HomePageHeader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavigationBarCustom(),
+      bottomNavigationBar:
+          widget.bottomNavigationBar ?? const BottomNavigationBarCustom(),
       body: Stack(
         children: [
           Image.asset(
@@ -48,11 +51,7 @@ class _HomePageState extends State<HomePage> {
                 SearchFood(
                   hideFilter: widget.hideFilter,
                 ),
-                const PromoAdvertising(),
-                AppSpacing.xL,
-                const NearestRestaurant(),
-                AppSpacing.M,
-                const PopularMenu()
+                widget.widget
               ],
             ),
           )
