@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HomeHeader extends StatefulWidget {
-  const HomeHeader({super.key});
+  final bool showBack;
+  const HomeHeader({super.key, this.showBack = false});
 
   @override
   State<HomeHeader> createState() => _HomeHeaderState();
@@ -14,6 +15,10 @@ class _HomeHeaderState extends State<HomeHeader> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+        widget.showBack ? IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back_ios),
+        ) : const SizedBox.shrink(),
         Text(
           "Tìm món ăn\nyêu thích của bạn",
           style: GoogleFonts.beVietnamPro(
