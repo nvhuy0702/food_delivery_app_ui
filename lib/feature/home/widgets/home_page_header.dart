@@ -28,8 +28,6 @@ class _HomePageHeaderState extends State<HomePageHeader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:
-          widget.bottomNavigationBar ?? const BottomNavigationBarCustom(),
       body: Stack(
         children: [
           Image.asset(
