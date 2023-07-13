@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app_ui/core/util/space.dart';
+import 'package:food_delivery_app_ui/feature/home/screens/chat_screen.dart';
+import 'package:food_delivery_app_ui/feature/home/screens/home_screen.dart';
 import 'package:food_delivery_app_ui/feature/home/widgets/bottom_navigation_bar_custom.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/home_header.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/nearest_restaurant.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/popular_menu.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/promo_advertising.dart';
-import 'package:food_delivery_app_ui/feature/home/widgets/search_food.dart';
-import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 
 class HomePage extends StatefulWidget {
   final bool showBack;
@@ -23,41 +18,46 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeScreen(),
+    Center(
+      child: Container(
+        alignment: Alignment.center,
+        height: 200,
+        width: 200,
+        color: Colors.pinkAccent,
+        child: const Text(
+          'Index 1: Hồ sơ cá nhân',
+        ),
+      ),
+    ),
+    Center(
+      child: Container(
+        alignment: Alignment.center,
+        height: 200,
+        width: 200,
+        color: Colors.yellow,
+        child: const Text(
+          'Index 2: Giỏ hàng',
+        ),
+      ),
+    ),
+    const ChatScreen(),
+  ];
+
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavigationBarCustom(),
-      body: Stack(
-        children: [
-          Image.asset(
-            AppAssets.images.homeBackground.path,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.fitWidth,
-            color: const Color(0xFF53E88B),
-          ),
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                AppSpacing.xXXL,
-                AppSpacing.M,
-                HomeHeader(
-                  showBack: widget.showBack,
-                ),
-                AppSpacing.M,
-                SearchFood(
-                  hideFilter: widget.hideFilter,
-                ),
-                const PromoAdvertising(),
-                AppSpacing.xL,
-                const NearestRestaurant(),
-                AppSpacing.M,
-                const PopularMenu()
-              ],
-            ),
-          )
-        ],
+      bottomNavigationBar: BottomNavigationBarCustom(
+        callback: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
+      body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
 }

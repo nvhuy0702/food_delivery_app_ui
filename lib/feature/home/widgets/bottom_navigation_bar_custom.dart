@@ -4,7 +4,12 @@ import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BottomNavigationBarCustom extends StatefulWidget {
-  const BottomNavigationBarCustom({super.key});
+  final Function(int index)? callback;
+
+  const BottomNavigationBarCustom({
+    super.key,
+    this.callback,
+  });
 
   @override
   State<BottomNavigationBarCustom> createState() =>
@@ -52,6 +57,7 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
           onTap: () {
             setState(() {
               currentIndex = index;
+              widget.callback?.call(currentIndex);
               HapticFeedback.lightImpact();
             });
           },

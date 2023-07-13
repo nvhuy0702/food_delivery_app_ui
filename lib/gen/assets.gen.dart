@@ -19,6 +19,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_back.png
   AssetGenImage get icBack => const AssetGenImage('assets/icons/ic_back.png');
 
+  /// File path: assets/icons/ic_call.png
+  AssetGenImage get icCall => const AssetGenImage('assets/icons/ic_call.png');
+
+  /// File path: assets/icons/ic_cancel.png
+  AssetGenImage get icCancel =>
+      const AssetGenImage('assets/icons/ic_cancel.png');
+
   /// File path: assets/icons/ic_cart.png
   AssetGenImage get icCart => const AssetGenImage('assets/icons/ic_cart.png');
 
@@ -54,16 +61,25 @@ class $AssetsIconsGen {
   AssetGenImage get icSearch =>
       const AssetGenImage('assets/icons/ic_search.png');
 
+  /// File path: assets/icons/ic_send.png
+  AssetGenImage get icSend => const AssetGenImage('assets/icons/ic_send.png');
+
   /// File path: assets/icons/ic_show.png
   AssetGenImage get icShow => const AssetGenImage('assets/icons/ic_show.png');
 
   /// File path: assets/icons/ic_user.png
   AssetGenImage get icUser => const AssetGenImage('assets/icons/ic_user.png');
 
+  /// File path: assets/icons/ic_volume.png
+  AssetGenImage get icVolume =>
+      const AssetGenImage('assets/icons/ic_volume.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         icArrowRight,
         icBack,
+        icCall,
+        icCancel,
         icCart,
         icFilter,
         icHide,
@@ -74,8 +90,10 @@ class $AssetsIconsGen {
         icPassword,
         icProfile,
         icSearch,
+        icSend,
         icShow,
-        icUser
+        icUser,
+        icVolume
       ];
 }
 
@@ -125,6 +143,18 @@ class $AssetsImagesGen {
   AssetGenImage get onBoarding2 =>
       const AssetGenImage('assets/images/on_boarding_2.png');
 
+  /// File path: assets/images/profile_1.png
+  AssetGenImage get profile1 =>
+      const AssetGenImage('assets/images/profile_1.png');
+
+  /// File path: assets/images/profile_2.png
+  AssetGenImage get profile2 =>
+      const AssetGenImage('assets/images/profile_2.png');
+
+  /// File path: assets/images/profile_3.png
+  AssetGenImage get profile3 =>
+      const AssetGenImage('assets/images/profile_3.png');
+
   /// File path: assets/images/promo_advertising.png
   AssetGenImage get promoAdvertising =>
       const AssetGenImage('assets/images/promo_advertising.png');
@@ -146,6 +176,9 @@ class $AssetsImagesGen {
         logoRestaurant4,
         onBoarding1,
         onBoarding2,
+        profile1,
+        profile2,
+        profile3,
         promoAdvertising,
         promoAdvertising1
       ];
