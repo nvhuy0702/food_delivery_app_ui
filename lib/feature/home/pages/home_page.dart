@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/feature/home/screens/chat_screen.dart';
 import 'package:food_delivery_app_ui/feature/home/screens/home_screen.dart';
 import 'package:food_delivery_app_ui/feature/home/widgets/bottom_navigation_bar_custom.dart';
+import 'package:food_delivery_app_ui/widgets/notification/notification_widget.dart';
 
 class HomePage extends StatefulWidget {
   final bool showBack;
@@ -20,17 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
-    Center(
-      child: Container(
-        alignment: Alignment.center,
-        height: 200,
-        width: 200,
-        color: Colors.pinkAccent,
-        child: const Text(
-          'Index 1: Hồ sơ cá nhân',
-        ),
-      ),
-    ),
+     const NotificationWidget(),
     Center(
       child: Container(
         alignment: Alignment.center,
