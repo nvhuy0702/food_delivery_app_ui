@@ -67,6 +67,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_show.png
   AssetGenImage get icShow => const AssetGenImage('assets/icons/ic_show.png');
 
+  /// File path: assets/icons/ic_star.png
+  AssetGenImage get icStar => const AssetGenImage('assets/icons/ic_star.png');
+
   /// File path: assets/icons/ic_user.png
   AssetGenImage get icUser => const AssetGenImage('assets/icons/ic_user.png');
 
@@ -92,6 +95,7 @@ class $AssetsIconsGen {
         icSearch,
         icSend,
         icShow,
+        icStar,
         icUser,
         icVolume
       ];
@@ -99,6 +103,12 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/cancel.png
+  AssetGenImage get cancel => const AssetGenImage('assets/images/cancel.png');
+
+  /// File path: assets/images/check.png
+  AssetGenImage get check => const AssetGenImage('assets/images/check.png');
 
   /// File path: assets/images/home_background.png
   AssetGenImage get homeBackground =>
@@ -135,6 +145,9 @@ class $AssetsImagesGen {
   AssetGenImage get logoRestaurant4 =>
       const AssetGenImage('assets/images/logo_restaurant_4.png');
 
+  /// File path: assets/images/money.png
+  AssetGenImage get money => const AssetGenImage('assets/images/money.png');
+
   /// File path: assets/images/on_boarding_1.png
   AssetGenImage get onBoarding1 =>
       const AssetGenImage('assets/images/on_boarding_1.png');
@@ -163,8 +176,18 @@ class $AssetsImagesGen {
   AssetGenImage get promoAdvertising1 =>
       const AssetGenImage('assets/images/promo_advertising_1.png');
 
+  /// File path: assets/images/voucher_promo_1.png
+  AssetGenImage get voucherPromo1 =>
+      const AssetGenImage('assets/images/voucher_promo_1.png');
+
+  /// File path: assets/images/voucher_promo_2.png
+  AssetGenImage get voucherPromo2 =>
+      const AssetGenImage('assets/images/voucher_promo_2.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+        cancel,
+        check,
         homeBackground,
         icFacebook,
         icGoogle,
@@ -174,13 +197,16 @@ class $AssetsImagesGen {
         logoRestaurant2,
         logoRestaurant3,
         logoRestaurant4,
+        money,
         onBoarding1,
         onBoarding2,
         profile1,
         profile2,
         profile3,
         promoAdvertising,
-        promoAdvertising1
+        promoAdvertising1,
+        voucherPromo1,
+        voucherPromo2
       ];
 }
 
