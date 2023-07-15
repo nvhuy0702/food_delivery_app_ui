@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/core/util/edg_insets.dart';
 import 'package:food_delivery_app_ui/core/util/size.dart';
+import 'package:food_delivery_app_ui/feature/order/order_detail.dart';
 import 'package:food_delivery_app_ui/gen/assets.gen.dart';
 
 import 'filter_widget.dart';
@@ -52,7 +53,7 @@ class _SearchFoodState extends State<SearchFood> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => const FilterWidget(),
+                      builder: (_) => const OrderDetail(),
                     ),
                   ),
                   child: Container(

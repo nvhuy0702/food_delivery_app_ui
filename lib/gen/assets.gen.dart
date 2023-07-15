@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_add.png
+  AssetGenImage get icAdd => const AssetGenImage('assets/icons/ic_add.png');
+
   /// File path: assets/icons/ic_arrow_right.png
   AssetGenImage get icArrowRight =>
       const AssetGenImage('assets/icons/ic_arrow_right.png');
@@ -26,8 +29,15 @@ class $AssetsIconsGen {
   AssetGenImage get icCancel =>
       const AssetGenImage('assets/icons/ic_cancel.png');
 
+  /// File path: assets/icons/ic_card.png
+  AssetGenImage get icCard => const AssetGenImage('assets/icons/ic_card.png');
+
   /// File path: assets/icons/ic_cart.png
   AssetGenImage get icCart => const AssetGenImage('assets/icons/ic_cart.png');
+
+  /// File path: assets/icons/ic_delete.png
+  AssetGenImage get icDelete =>
+      const AssetGenImage('assets/icons/ic_delete.png');
 
   /// File path: assets/icons/ic_filter.png
   AssetGenImage get icFilter =>
@@ -39,11 +49,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_home.png
   AssetGenImage get icHome => const AssetGenImage('assets/icons/ic_home.png');
 
+  /// File path: assets/icons/ic_location.png
+  AssetGenImage get icLocation =>
+      const AssetGenImage('assets/icons/ic_location.png');
+
   /// File path: assets/icons/ic_mail.png
   AssetGenImage get icMail => const AssetGenImage('assets/icons/ic_mail.png');
 
   /// File path: assets/icons/ic_mess.png
   AssetGenImage get icMess => const AssetGenImage('assets/icons/ic_mess.png');
+
+  /// File path: assets/icons/ic_minus.png
+  AssetGenImage get icMinus => const AssetGenImage('assets/icons/ic_minus.png');
 
   /// File path: assets/icons/ic_notification.png
   AssetGenImage get icNotification =>
@@ -79,16 +96,21 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        icAdd,
         icArrowRight,
         icBack,
         icCall,
         icCancel,
+        icCard,
         icCart,
+        icDelete,
         icFilter,
         icHide,
         icHome,
+        icLocation,
         icMail,
         icMess,
+        icMinus,
         icNotification,
         icPassword,
         icProfile,
@@ -103,6 +125,10 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/background_price.png
+  AssetGenImage get backgroundPrice =>
+      const AssetGenImage('assets/images/background_price.png');
 
   /// File path: assets/images/cancel.png
   AssetGenImage get cancel => const AssetGenImage('assets/images/cancel.png');
@@ -186,6 +212,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        backgroundPrice,
         cancel,
         check,
         homeBackground,
